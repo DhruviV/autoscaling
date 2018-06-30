@@ -2,7 +2,3 @@ Flask
 pypyodbc
 numpy
 
-scipy
-
-scikit-learn
-
