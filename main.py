@@ -3,12 +3,12 @@ import csv
 from flask import Flask, render_template, request,flash
 import pypyodbc
 import numpy as np
-import scipy
+# import scipy
 import math
 
 from time import time
-import itertools
-from sklearn.cluster import KMeans
+# import itertools
+# from sklearn.cluster import KMeans
 
 
 
