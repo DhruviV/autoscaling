@@ -25,7 +25,7 @@ def index():
 
 @app.route('/search', methods = ['POST', 'GET'])
 def search():
-    cursor = connection.cursor()
+
     k = request.args.get("k")
     min = request.args.get("min")
     max = request.args.get("max")
@@ -35,7 +35,7 @@ def search():
         mag = random.uniform(float(min), float(max))
         cursor.execute("select  top 1 locationSource from earthquakes where mag>='"+str(mag)+"'")
         result=cursor.fetchall()
-    connection.close()
+
     end_time = time()
     time_taken = (end_time - start_time) / int(k)
     flash('The Average Time taken to execute the random queries is : ' + "%.4f" % time_taken + " seconds")
@@ -63,24 +63,24 @@ def case():
 
 @app.route('/count',methods = ['POST', 'GET'])
 def count():
-    cursor = connection.cursor()
+
     mag = request.args.get("mag")
     cursor.execute("Select count(*) from edata where mag>='"+mag+"'")
     rows=cursor.fetchall()
-    connection.close()
+
     return render_template('count.html', a=rows)
 
 
 @app.route('/list',methods = ['POST', 'GET'])
 def list():
-    cursor = connection.cursor()
+
     min = request.args.get("min")
     max = request.args.get("max")
     # loc = request.args.get("loc")
     cursor.execute("select  latitude, longitude, place from edata where mag Between '"+min+"' and '"+max+"' ")
     rows=cursor.fetchall()
     print(rows)
-    connection.close()
+ 
     return render_template('list.html', ci=rows)
 
 
