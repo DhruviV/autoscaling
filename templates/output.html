@@ -15,84 +15,28 @@
 
                             </tr>
                  </table>
+            <div>
+            <table>
+                <tr>
+                    <th> Location Source</th>
 
 
-<h1>centroids</h1>
+                </tr>
+                <tbody>
+                 {% for a in r %}
+                     <tr>
+                <td>
+                   {{ a[0] }}
+                </td>
+                     </tr>
+                {% endfor %}
 
-                {% for ar in centroid %}
-        <p>{{ ar[0] }}</p>
-        {% endfor %}
-<div class="row">
-        <div class="col-sm-1"></div>
-        <div class="col-sm-4">
-          <table class="table-striped" class="tmargin">
-          <th>Fare</th>
-          <th>Age</th>
-          <th>Cluster No.</th>
+                 </tbody>
 
-
-        </tr>
-        {% for array in my %}
-        <tr>
-          <td>{{ array [0] }}</td>
-          <td> {{ array[1] }} </td>
-          <td> {{ array[2] }} </td>
-
-        </tr>
-       {% endfor %}
-
-
-      </table>
-         <div class="col-sm-1"></div>
-        <div class="col-sm-6">
-          <table class="table-striped" class="tmargin">
-            <thead>
-              <tr>
-                <th style="padding: 5px"> Centroid 1 </th>
-                <th style="padding: 5px"> Centroid 2</th>
-                <th style="padding: 5px"> Distance </th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for i in range(length) %}
-              <tr>
-                <td>{{ distances[i][0][0] }}, {{distances[i][1][0]}}</td>
-                <td>{{ distances[i][0][1] }}, {{distances[i][1][1]}}</td>
-                <td>{{ distances[i][0][2] }}</td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-
-
-
-        {% for label in range(label_length) %}
-          <h3>Cluster Label :{{ label }}</h3>
-          <h4>Total Count: {{ length_value[label] }}</h4>  <img src='../static/images/s.jpg' width="150" height="150"></center>
-              <img src='../static/images/n.jpg' width="150" height="150"></center>
-          <table class="table-striped" class="tmargin">
-            <thead>
-              <tr>
-                <th>X</th>
-                <th>Y</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for j in range(length_value[label])%}
-              <tr>
-                <td class="col-md-2">{{dhruvi[label][j][0]}}</td>
-                <td class="col-md-2">{{dhruvi[label][j][1]}}</td>
-              </tr>
-              {%endfor%}
-            </tbody>
-          </table>
-          {% endfor %}
-        </div>
-    </div>
-
-
+            </table>
+            <div>
 <h1>{{ t[0] }}</h1>
-                 </table>
+
             {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for message in messages %}
@@ -104,6 +48,9 @@
         {% endif %}
     {% endwith %}
 
+            </div>
+        </div>
 
-</div></div></body>
+
+</body>
 </html>
