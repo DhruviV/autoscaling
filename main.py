@@ -16,7 +16,7 @@ from time import time
 app = Flask(__name__)
 app.secret_key = "Secret"
 
-connection = pypyodbc.connect("Driver={ODBC Driver 13 for SQL Server};Server=tcp:dhruvi.database.windows.net,1433;Database=Dhruvi;Uid=dhruvi@dhruvi;Pwd=Shivangi@27;")
+connection = pypyodbc.connect("Driver={ODBC Driver 13 for SQL Server};Server=(Specify Server Name);Database=(specify database name);Uid=(specify userid);Pwd=(specify password);")
 cursor = connection.cursor()
 
 @app.route('/')
